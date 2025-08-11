@@ -7,12 +7,12 @@ services:
       # Where you see `${...:-...}`, you can override the values in the `./.env` file:
       PUID: "${PUID:-1000}"
       PGID: "${PGID:-1000}"
-      TZ: "${TZ:-America/Los_Angeles}"
+      TZ: "${TZ:-Etc/UTC}"
     volumes:
-      - "<path/to/ytdl-sub/config>:/config"
+      - "./ytdl-sub/config/:/config/"
       # Optional:
-      - "<path/to/tv_shows>:/tv_shows"
-      - "<path/to/movies>:/movies"
-      - "<path/to/music_videos>:/music_videos"
-      - "<path/to/music>:/music"
+      # - "<path/to/tv_shows/>:/tv_shows/"
+      # - "<path/to/movies/>:/movies/"
+      # - "<path/to/music_videos/>:/music_videos/"
+      # - "<path/to/music/>:/music/"
     restart: "unless-stopped"
