@@ -1,16 +1,17 @@
 # https://ytdl-sub.readthedocs.io/en/latest/guides/getting_started/automating_downloads.html#docker-and-unraid
 services:
   ytdl-sub:
-    image: ghcr.io/jmbannon/ytdl-sub:latest
-    container_name: ytdl-sub
+    image: "ghcr.io/jmbannon/ytdl-sub:latest"
+    container_name: "ytdl-sub"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Los_Angeles
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "America/Los_Angeles"
     volumes:
-      - <path/to/ytdl-sub/config>:/config
-      - <path/to/tv_shows>:/tv_shows  # optional
-      - <path/to/movies>:/movies  # optional
-      - <path/to/music_videos>:/music_videos  # optional
-      - <path/to/music>:/music  # optional
-    restart: unless-stopped
+      - "<path/to/ytdl-sub/config>:/config"
+      # Optional:
+      - "<path/to/tv_shows>:/tv_shows"
+      - "<path/to/movies>:/movies"
+      - "<path/to/music_videos>:/music_videos"
+      - "<path/to/music>:/music"
+    restart: "unless-stopped"
