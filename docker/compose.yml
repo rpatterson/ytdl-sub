@@ -4,9 +4,10 @@ services:
     image: "ghcr.io/jmbannon/ytdl-sub:latest"
     container_name: "ytdl-sub"
     environment:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "America/Los_Angeles"
+      # Where you see `${...:-...}`, you can override the values in the `./.env` file:
+      PUID: "${PUID:-1000}"
+      PGID: "${PGID:-1000}"
+      TZ: "${TZ:-America/Los_Angeles}"
     volumes:
       - "<path/to/ytdl-sub/config>:/config"
       # Optional:
