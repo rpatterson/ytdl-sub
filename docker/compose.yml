@@ -3,6 +3,7 @@ services:
   ytdl-sub:
     image: "ghcr.io/jmbannon/ytdl-sub:latest"
     container_name: "ytdl-sub"
+    working_dir: "/config/"
     environment:
       # Where you see `${...:-...}`, you can override the values in the `./.env` file:
       PUID: "${PUID:-1000}"
