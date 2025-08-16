@@ -58,12 +58,13 @@ RUN mkdir -p /config && \
 # CONTAINER CONFIGS
 
 ENV EDITOR="nano" \
-HOME="/config" \
-DOCKER_MODS=linuxserver/mods:universal-stdout-logs|linuxserver/mods:universal-cron \
 DEFAULT_WORKSPACE=/config \
-CRON_SCRIPT="/config/cron" \
-CRON_WRAPPER_SCRIPT="/config/.cron_wrapper" \
-LOGS_TO_STDOUT=/config/.cron.log \
+HOME="${DEFAULT_WORKSPACE}" \
+DOCKER_MODS=linuxserver/mods:universal-stdout-logs|linuxserver/mods:universal-cron \
+CRON_SCRIPT="${DEFAULT_WORKSPACE}/cron" \
+CRON_WRAPPER_SCRIPT="${DEFAULT_WORKSPACE}/.cron_wrapper" \
+LOGS_TO_STDOUT=${DEFAULT_WORKSPACE}/.cron.log \
 LSIO_FIRST_PARTY=false
 
-VOLUME /config
+VOLUME "${DEFAULT_WORKSPACE}"
+WORKDIR "${DEFAULT_WORKSPACE}"
