@@ -9,6 +9,7 @@ ytdl-sub User Guide
   guides/index
   prebuilt_presets/index
   usage
+  debugging
   config_reference/index
   faq/index
   deprecation_notices

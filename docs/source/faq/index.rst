@@ -222,8 +222,24 @@ use `the same CLI options as re-downloading a file`_
 There is a bug where...
 -----------------------
 
-..ytdl-sub is not downloading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+...ytdl-sub is not downloading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+...ytdl-sub is downloading at 360p or other lower quality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+...ytdl-sub downloads 2-4 videos and then fails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``ytdl-sub`` :ref:`builds on top of yt-dlp <introduction:motivation>` which does all the
+retrieval of metadata and downloading. In turn, ``yt-dlp`` itself does so using remote
+services that are constantly changing. So when there are issues with such tasks, they're
+usually, almost always, "upstream" of ``ytdl-sub``. If the problem you're seeing is
+about "formatting stuff", then it may be with ``ytdl-sub`` or how you've configured
+it. If the problem you're seeing is about "getting stuff", you're more likely to find
+answers faster by looking to the ``yt-dlp`` community.
+
+TODO
 
 Run with ``--log-level verbose`` to see all yt-dlp logs, to rule out whether it is a
 yt-dlp or ytdl-sub issue.
