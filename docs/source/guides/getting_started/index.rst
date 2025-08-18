@@ -39,7 +39,7 @@ For most users, ``ytdl-sub`` works as follows:
 Subscriptions use presets
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run ``$ ytdl-sub sub`` to read :doc:`a subscription file <./first_sub>` that defines
+Run ``$ ytdl-sub sub`` to read :doc:`a subscription file <./subscriptions>` that defines
 what subscriptions to download and place into your media library. Each subscription
 selects which :doc:`presets <../../prebuilt_presets/index>` to apply. Those presets
 configure how each subscription is downloaded and placed in the media library.
@@ -139,17 +139,17 @@ complete details, but for almost all of the use cases served by ``ytdl-sub``, th
 is accurate and representative.
 
 
-Ready to Start?
----------------
+Next Steps
+----------
 
-Now that you've completed your install of ``ytdl-sub``, it's time to get started.  It is
-recommended to go through the below sections in order to fully grasp ytdl-sub.
+With ``ytdl-sub`` installed and the above understood, the next step is to :doc:`start
+adding subscriptions <./subscriptions>`.
 
 
 .. toctree::
   :maxdepth: 2
 
-  first_sub
+  subscriptions
   first_download
   automating_downloads
   first_config

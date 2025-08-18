@@ -1,5 +1,55 @@
-Initial Subscription
-====================
+Subscriptions
+=============
+
+Once you understand :ref:`how ytdl-sub works
+<guides/getting_started/index:architecture>`, it's time to start writing your
+:doc:`../../config_reference/subscription_yaml`.
+
+
+Media library paths
+-------------------
+
+Everyone's media library may use different paths so ``ytdl-sub`` can't provide defaults
+for those paths. Tell ``ytdl-sub`` where to put your media using :ref:`overrides
+<guides/getting_started/index:presets and subscriptions accept overrides>`:
+
+.. code-block:: yaml
+  :caption: subscriptions.yaml
+  :emphasize-lines: 3-
+
+  __preset__:
+    overrides:
+      tv_show_directory: "/media/Library/Videos/Series"
+      music_directory: "/media/Library/Music"
+      music_video_directory: "/media/Library/Videos/Music"
+
+See the reference documentation if you want details about :ref:`the __preset__: special
+key <config_reference/subscription_yaml:file preset>`.
+
+
+Media library software and media types
+--------------------------------------
+
+Different media library software, such as `Jellyfin`_, `Kodi`_, Plex, or Emby, have
+different requirements for where media files are placed, how those files are names, how
+metadata is formatted, and more. Those software also have different requirements for
+different types of media, such as shows or series, music, music videos, etc.. Use
+:ref:`presets <TODO:TODO>` in YAML keys to tell ``ytdl-sub`` for which media library
+software and media type to process downloaded files:
+
+TODO
+
+
+Subscription type
+-----------------
+
+TODO only recent, etc...
+
+``ytdl-sub`` serves these different use cases by applying :ref:`presets
+<guides/getting_started/index:subscriptions use presets>` to subscriptions which the
+user configures in the ancestor YAML keys of the subscription
+
+TODO
 
 Your first subscription file should look something like this:
 
