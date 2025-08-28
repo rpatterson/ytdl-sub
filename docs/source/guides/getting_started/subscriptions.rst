@@ -13,6 +13,12 @@ Everyone's media library may use different paths so ``ytdl-sub`` can't provide
 defaults. Tell ``ytdl-sub`` where to put your media using :ref:`overrides
 <guides/getting_started/index:presets and subscriptions accept overrides>`:
 
+.. warning::
+
+   The following ``*_directory:`` paths are just examples and **must** be updated to the
+   correct paths for your library. If using Docker, these paths must also be
+   :ref:`the correct paths inside the container <guides/install/docker:volumes>`.
+
 .. code-block:: yaml
   :caption: subscriptions.yaml
   :emphasize-lines: 3-
