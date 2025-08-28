@@ -121,3 +121,25 @@ In these examples, the configuration files will be at
 ``<path/to/ytdl-sub/config>/config.yaml`` and
 ``<path/to/ytdl-sub/config>/subscriptions.yaml``. Start the container the first time to
 populate those files with default examples.
+
+
+Volumes
+-------
+
+
+TODO
+
+Another convention I hate for the same reason is `/data/`, but I also think there are
+other reasons why ytdl-sub specifically should *not* start to use it. While it's
+possible for users to take their library paths as seen by the host, and bind mount them
+inside the container to different paths under `/data/`, and I'm not aware of any place
+where ytdl-sub or yt-dlp store absolute paths, I think it sets users up for problems to
+get them used to representing their library paths differently inside containers than on
+the host. I know that even as someone with senior software development and DevOps
+experience from before it was called DevOps, I have been bitten by problems using
+different paths for my media library several times and I ended up reworking my whole
+self-hosted media library ecosystem to always use the same paths as the host
+throughout. My sense is that's also the lead we can take from established projects in
+this same domain such as Servarr, Jellyfin, etc., none of them that I'm aware of
+recommend users adopt any particular media library layout but instead tell users where
+to insert their library paths into the configuration.
