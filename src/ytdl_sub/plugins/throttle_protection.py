@@ -146,6 +146,8 @@ class RandomizedRangeOverridesValidator(_RandomizedRangeValidator):
 
 class ThrottleProtectionOptions(ToggleableOptionsDictValidator):
     """
+    TODO: Leaving blank to use yt-dlp defaults?
+
     Provides options to make ytdl-sub look more 'human-like' to protect from throttling. For
     range-based values, a random number will be chosen within the range to avoid sleeps looking
     scripted.
