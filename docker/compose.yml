@@ -3,15 +3,22 @@ services:
   ytdl-sub:
     image: "ghcr.io/jmbannon/ytdl-sub:latest"
     container_name: "ytdl-sub"
+    # Don't run when not downloading and automate by starting the container periodically:
+    # Comment these next 3 lines if using the cron integration:
+    user: "${PUID:-1000}:${PGID:-1000}"
+    entrypoint: "ytdl-sub"
+    command: "sub"
     environment:
       # Where you see `${...:-...}`, you can override the values in the `./.env` file:
       PUID: "${PUID:-1000}"
       PGID: "${PGID:-1000}"
       TZ: "${TZ:-Etc/UTC}"
-      # Automated downloads on a regular schedule:
+      # Optionally, leave container running and let cron run ytdl-sub periodically:
       # https://ytdl-sub.readthedocs.io/en/latest/guides/getting_started/automating_downloads.html#docker-and-unraid
-      CRON_SCHEDULE: "0 */6 * * *"
-      CRON_RUN_ON_START: "false"
+      # CRON_SCHEDULE: "0 */6 * * *"
+      # CRON_RUN_ON_START: "false"
+    # Uncomment this line if using the cron integration:
+    # restart: "unless-stopped"
     volumes:
       - "./ytdl-sub/config/:/config/"
       # Optional:
@@ -19,4 +26,3 @@ services:
       # - "<path/to/movies/>:/movies/"
       # - "<path/to/music_videos/>:/music_videos/"
       # - "<path/to/music/>:/music/"
-    restart: "unless-stopped"
