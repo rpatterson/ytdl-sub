@@ -234,6 +234,9 @@ These are often just limits imposed by the external services that are not bugs. 
 may be little that can be done about them, but see :ref:`the '_throttle_protection'
 preset <prebuilt_presets/helpers:_throttle_protection>` for more information.
 
+...ytdl-sub repeats downloading entries after finishing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ...date_range is not downloading older videos after I changed the range
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
