@@ -17,6 +17,9 @@ services:
       # https://ytdl-sub.readthedocs.io/en/latest/guides/getting_started/automating_downloads.html#docker-and-unraid
       # CRON_SCHEDULE: "0 */6 * * *"
       # CRON_RUN_ON_START: "false"
+      # Update yt-dlp to the latest configured version on container start:
+      # https://ytdl-sub.readthedocs.io/en/latest/guides/install/docker.html#environment-variables
+      UPDATE_YT_DLP_ON_START: "nightly"
     # Uncomment this line if using the cron integration:
     # restart: "unless-stopped"
     volumes:
